@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RFID Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>RFID ATTENDANCE SYSTEM</h1>
+        <p>ESP32 + RC522</p>
+    </header>
+
+    <section class="info">
+
+        <div class="box">
+            <span>DATE</span>
+            <strong id="date">--/--/----</strong>
+        </div>
+
+        <div class="box">
+            <span>TIME</span>
+            <strong id="time">--:--:--</strong>
+        </div>
+
+        <div class="box status-box">
+            <span>ATTENDANCE STATUS</span>
+            <strong id="systemStatus">OPEN</strong>
+        </div>
+
+    </section>
+
+    <section class="master">
+        <h2>Master Control</h2>
+
+        <p>
+            Master: <b>Tanmay</b>
+        </p>
+
+        <p>
+            Master UID:
+            <b>96 EC 51 07</b>
+        </p>
+
+        <p>
+            Closing Time:
+            <b>09:00 AM</b>
+        </p>
+
+        <button id="closeBtn" onclick="closeAttendance()">
+            CLOSE ATTENDANCE
+        </button>
+    </section>
+
+    <section class="attendance">
+
+        <div class="heading">
+            <h2>Today's Attendance</h2>
+
+            <button class="clear-btn" onclick="clearAttendance()">
+                Clear
+            </button>
+        </div>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Name</th>
+                    <th>UID</th>
+                    <th>Punch Time</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody id="attendanceTable">
+            </tbody>
+
+        </table>
+
+        <p id="noData">
+            No attendance recorded yet.
+        </p>
+
+    </section>
+
+    <footer>
+        RFID Attendance System | ESP32
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
